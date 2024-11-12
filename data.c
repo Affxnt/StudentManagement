@@ -10,6 +10,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+int countStudentsInFile(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Could not open file %s\n", filename);
+        return 0;
+    }
+
+    char buffer[256];
+    int studentCount = 0;
+    while (fgets(buffer, sizeof(buffer), file)) {
+        studentCount++;  // Count each line as a student
+    }
+
+    fclose(file);
+    return studentCount;
+}
 int loadStudents(Student **students, const char *filePath) {
   // Count the number of students
   int numStudents = countStudentsInFile(filePath);
@@ -56,8 +72,6 @@ int loadStudents(Student **students, const char *filePath) {
   fclose(fptr);
   return numStudents;
 }
-
-
 void removeStudent(Student students[], int *numStudents) {
   int studentId;
   int found = 0;
