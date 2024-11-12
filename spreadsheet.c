@@ -12,7 +12,7 @@
 
 int countStudentsInFile(const char *filename);
 void displaySpreadsheet(Student students[], int numStudents) {
-  printf("COMP 348 GRADE SHEET\n");
+  printf("CLASS GRADE SHEET\n");
   printf("ID     \tLAST       \tFIRST      \tA1  A2  A3    Midterm    Exam     Total    Grade\n");
   printf("--     \t----       \t-----      \t--  --  --    -------    ----     -----    -----\n");
   for (int i = 0; i < numStudents; i++) {
@@ -32,7 +32,7 @@ void displaySpreadsheet(Student students[], int numStudents) {
 
 // Display a histogram based on students' letter grades
 void printHistogram(Student students[], int numStudents) {
-  printf("\nCOMP 348 Grade Distribution:\n");
+  printf("\nCLASS Grade Distribution:\n");
 
   int numA = 0, numB = 0, numC = 0, numD = 0, numF = 0;
 
